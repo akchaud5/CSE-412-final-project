@@ -131,7 +131,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <p>CSE 412 - Database Management | Group 4 | Phase 3</p>
-        <p>Vibhav Khare - Swar Mahesh Khatav - Owen Krueger</p>
+        <p>Ayush Chaudhary - Vibhav Khare - Swar Mahesh Khatav - Owen Krueger</p>
       </footer>
     </div>
   );
