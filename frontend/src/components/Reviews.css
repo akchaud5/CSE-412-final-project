@@ -1,0 +1,267 @@
+.reviews {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.reviews-empty {
+  padding: 4rem 0;
+}
+
+/* Header */
+.reviews-header {
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.btn-back:hover {
+  background: var(--neon-cyan);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.game-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 2rem;
+}
+
+.game-title-large {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.game-meta {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.meta-item {
+  font-weight: 600;
+}
+
+.meta-separator {
+  color: var(--border-color);
+}
+
+.btn-add-review {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Add Review Form */
+.add-review-card {
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-review-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-top: 2rem;
+}
+
+.reviews-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Review Card */
+.review-card {
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  border-color: var(--neon-pink);
+  transform: translateX(5px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reviewer-icon {
+  font-size: 1.5rem;
+}
+
+.reviewer-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.you-badge {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+  color: var(--dark-bg);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.btn-icon-small {
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-icon-small:hover {
+  background: #ff4444;
+  color: white;
+  transform: scale(1.1);
+}
+
+.review-rating {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rating-text {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.review-comment {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 1rem;
+  background: rgba(0, 255, 255, 0.03);
+  border-left: 3px solid var(--neon-cyan);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .game-header-content {
+    flex-direction: column;
+  }
+
+  .game-title-large {
+    font-size: 1.8rem;
+  }
+
+  .btn-add-review {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.75rem;
+  }
+}
