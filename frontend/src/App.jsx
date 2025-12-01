@@ -20,7 +20,7 @@ function App() {
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await userAPI.getById(8);
+      const response = await userAPI.getById(16);
       
       //console.log("API Response Data:", response.data);
       setCurrentUser(response.data);
@@ -82,21 +82,18 @@ function App() {
           className={`tab ${activeTab === 'profile' ? 'active' : ''}`}
           onClick={() => setActiveTab('profile')}
         >
-          <span className="tab-icon">👤</span>
           <span className="tab-text">Profile</span>
         </button>
         <button
           className={`tab ${activeTab === 'games' ? 'active' : ''}`}
           onClick={() => setActiveTab('games')}
         >
-          <span className="tab-icon">🎮</span>
           <span className="tab-text">Games</span>
         </button>
         <button
           className={`tab ${activeTab === 'reviews' ? 'active' : ''}`}
           onClick={() => setActiveTab('reviews')}
         >
-          <span className="tab-icon">⭐</span>
           <span className="tab-text">Reviews</span>
         </button>
         {currentUser?.isadmin && (
@@ -104,7 +101,6 @@ function App() {
             className={`tab tab-admin ${activeTab === 'admin' ? 'active' : ''}`}
             onClick={() => setActiveTab('admin')}
           >
-            <span className="tab-icon">⚙️</span>
             <span className="tab-text">Admin</span>
           </button>
         )}
@@ -112,7 +108,6 @@ function App() {
           className={`tab ${activeTab === 'statistics' ? 'active' : ''}`}
           onClick={() => setActiveTab('statistics')}
         >
-          <span className="tab-icon">📊</span>
           <span className="tab-text">LeaderBoard</span>
         </button>
       </nav>

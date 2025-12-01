@@ -155,22 +155,18 @@ function Profile({ userId, onUserUpdate }) {
       {/* Stats Grid */}
       <div className="stats-grid">
         <div className="stat-card card">
-          <div className="stat-icon">🎮</div>
           <div className="stat-value">{stats?.total_games || 0}</div>
           <div className="stat-label">Total Games</div>
         </div>
         <div className="stat-card card">
-          <div className="stat-icon">✅</div>
           <div className="stat-value">{stats?.completed_games || 0}</div>
           <div className="stat-label">Completed</div>
         </div>
         <div className="stat-card card">
-          <div className="stat-icon">🎯</div>
           <div className="stat-value">{stats?.playing_games || 0}</div>
           <div className="stat-label">Playing</div>
         </div>
         <div className="stat-card card">
-          <div className="stat-icon">⭐</div>
           <div className="stat-value">{stats?.avg_rating || 'N/A'}</div>
           <div className="stat-label">Avg Rating</div>
         </div>
