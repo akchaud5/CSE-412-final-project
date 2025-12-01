@@ -4,6 +4,7 @@ import Profile from './components/Profile';
 import Games from './components/Games';
 import Reviews from './components/Reviews';
 import Admin from './components/Admin';
+import Statistics from './components/Statistics'
 import './App.css';
 
 function App() {
@@ -12,14 +13,16 @@ function App() {
   const [selectedGame, setSelectedGame] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // For demo purposes, using user ID 7 (akchaud5)
+  // For demo purposes, using user ID 8 (akchaud5)
   useEffect(() => {
     fetchCurrentUser();
   }, []);
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await userAPI.getById(7);
+      const response = await userAPI.getById(8);
+      
+      //console.log("API Response Data:", response.data);
       setCurrentUser(response.data);
     } catch (error) {
       console.error('Error fetching user:', error);
@@ -105,6 +108,13 @@ function App() {
             <span className="tab-text">Admin</span>
           </button>
         )}
+        <button
+          className={`tab ${activeTab === 'statistics' ? 'active' : ''}`}
+          onClick={() => setActiveTab('statistics')}
+        >
+          <span className="tab-icon">📊</span>
+          <span className="tab-text">LeaderBoard</span>
+        </button>
       </nav>
 
       {/* Main Content */}
@@ -125,6 +135,13 @@ function App() {
         )}
         {activeTab === 'admin' && (
           <Admin isAdmin={currentUser?.isadmin} />
+        )}
+        {activeTab === 'statistics' && (
+          <Statistics
+            userId={currentUser?.userid}
+            selectedGame={selectedGame}
+            onBack={() => setSelectedGame(null)}
+          />
         )}
       </main>
 

@@ -1,0 +1,38 @@
+:root {
+  --text-white: #ffffff;
+}
+
+
+.stats-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+
+.stats-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+
+.stats-quadrant {
+  flex: 1; 
+  min-width: 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.stats-title {
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  height: 350px;
+  width: 100%;
+}

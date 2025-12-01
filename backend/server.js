@@ -364,6 +364,81 @@ app.delete('/api/reviews/:reviewid', async (req, res) => {
   }
 });
 
+// ==================Game Statistics ROUTES ===============
+app.get('/api/statistics/popularity/:game_status', async (req, res) => {
+  try {
+    //const { game_status } = req.params;
+    let { game_status } = req.params;
+    const queryParam = game_status === 'all' ? '%' : game_status;
+    const result = await pool.query(`
+      SELECT game.title, game.gameid, COUNT(*) AS numberOwned
+      FROM libraryentry
+      JOIN game ON libraryentry.gameid = game.gameid
+      WHERE libraryentry.status LIKE $1
+      GROUP BY game.gameid, game.title
+      ORDER BY numberOwned DESC
+      LIMIT 3
+    `, [queryParam]);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+app.get('/api/statistics/rating/:game_genre', async (req, res) => {
+  try {
+    //const { game_genre } = req.params;
+    let { game_genre } = req.params;
+    const queryParam = game_genre === 'all' ? '%' : game_genre;
+    const result = await pool.query(`
+      SELECT game.title, game.gameid, AVG(review.rating) AS AverageReview
+      FROM review
+      JOIN game ON review.gameid = game.gameid
+      WHERE game.genre LIKE $1
+      GROUP BY game.gameid, game.title
+      ORDER BY AverageReview DESC
+      LIMIT 5
+    `, [queryParam]);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+app.get('/api/statistics/Devs', async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT game.developer, COUNT(*) AS numberDevelopedGames
+      FROM game
+      GROUP BY game.developer
+      ORDER BY numberDevelopedGames DESC
+    `);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
+app.get('/api/statistics/Users', async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT public."User".username, COUNT(libraryentry.gameid) AS OwnedGames
+      FROM public."User"
+      JOIN libraryentry ON public."User".userid = libraryentry.userid
+      GROUP BY public."User".userid
+      ORDER BY OwnedGames DESC
+      LIMIT 5
+    `);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'VG Tracker API is running' });
@@ -371,5 +446,5 @@ app.get('/api/health', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
