@@ -18,7 +18,8 @@ VALUES
     (4, 'BlazeRaven', 'blaze@example.com', 'blazepass', FALSE),
     (5, 'JarGman', 'jar@example.com', 'jarpass', FALSE),
     (6, 'PrimeDagger', 'prime@example.com', 'primepass', FALSE),
-    (7, 'akchaud5', 'akchaud5@asu.edu', 'password123', TRUE),
+    (7, 'okrueg', 'opkruege@asu.edu', '4321', TRUE),
+    (8, 'akchaud5', 'akchaud5@asu.edu', 'password123', TRUE),
     (9, 'GhostCaptain', 'ghost@example.com', 'ghostpass', FALSE),
     (10, 'FrlNovaCmt10', 'frl@example.com', 'frlpass', FALSE),
     (11, 'GuardianNova', 'guardian@example.com', 'guardianpass', FALSE),
@@ -124,13 +125,18 @@ VALUES
     -- BlazeRaven (userid 4)
     (4, 6, 'Playing', 4, 'Building crazy stuff, this game is a time sink.'),
     (4, 14, 'Wishlist', NULL, 'Hyped for this one, looks insane.'),
-    -- akchaud5 (userid 7 - Admin)
-    (7, 29, 'Playing', 5, 'Elden Ring is a masterpiece!'),
-    (7, 31, 'Completed', 5, 'Best RPG I have ever played'),
-    (7, 45, 'Completed', 5, 'Metroidvania perfection'),
-    (7, 44, 'Playing', 4, 'Relaxing farm life'),
-    (7, 43, 'Dropped', 2, 'Too buggy at launch'),
-    (7, 40, 'Wishlist', NULL, 'Need to play this'),
+    -- okrueg (7)
+    (7, 49, 'Completed', 5, 'Cool enough'),
+    (7, 54, 'Playing', 4, 'Play more'),
+    (7, 2, 'Playing', 4, 'Why is it so hard'),
+    (7, 3, 'Dropped', 2, 'Meh'),
+    -- akchaud5 (userid 8 - Admin)
+    (8, 29, 'Playing', 5, 'Elden Ring is a masterpiece!'),
+    (8, 31, 'Completed', 5, 'Best RPG I have ever played'),
+    (8, 45, 'Completed', 5, 'Metroidvania perfection'),
+    (8, 44, 'Playing', 4, 'Relaxing farm life'),
+    (8, 43, 'Dropped', 2, 'Too buggy at launch'),
+    (8, 40, 'Wishlist', NULL, 'Need to play this'),
     -- GhostCaptain (userid 9)
     (9, 29, 'Completed', 5, 'Died 1000 times but worth it'),
     (9, 35, 'Playing', 4, 'Souls-like done right'),

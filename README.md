@@ -39,12 +39,20 @@ A full-stack web application for managing your video game library, tracking game
 - Delete games from the database
 - Search games within admin panel
 
+### LeaderBoard Panel
+
+- View Most played Games
+- View Best Rated Games
+- View The Largest game Developers
+- View The Users with the Largest game Libraries
+- *All live Updated*
 ## Technology Stack
 
 ### Frontend
 - **React 18** - UI framework
 - **Vite** - Build tool and development server
 - **Axios** - HTTP client for API requests
+- **ReCharts** - UI tool For plots
 - **Custom CSS** - Cyberpunk/gaming-themed design
 
 ### Backend
@@ -95,6 +103,7 @@ npm start
 ```bash
 cd frontend
 npm install
+npm install recharts
 npm run dev
 # Frontend runs on http://localhost:3000
 ```
@@ -192,12 +201,18 @@ The application uses four main tables:
 - Delete games via Admin Panel (DELETE /api/games/:id)
 
 ## Authentication Details
-
-For testing purposes:
+### For testing purposes:
+Admin:
 - **Username:** akchaud5
 - **Email:** akchaud5@asu.edu
 - **Password:** password123
 - **Role:** Admin
+
+Regular User:
+- **Username:** ign_employee
+- **Email:** emp@ign.com
+- **Password:** ign420
+- **Role:** User
 
 ## Project Structure
 
@@ -215,6 +230,7 @@ vg-tracker/
 │   │   │   ├── Games.jsx
 │   │   │   ├── Reviews.jsx
 │   │   │   └── Admin.jsx
+|   |   |   └── Statistics.jsx
 │   │   ├── services/      # API service layer
 │   │   ├── App.jsx        # Main application component
 │   │   └── main.jsx       # React entry point

@@ -40,4 +40,11 @@ export const reviewAPI = {
   delete: (reviewid) => api.delete(`/reviews/${reviewid}`),
 };
 
+export const statisticsAPI = {
+  getPopularGames: (game_status) => api.get(`/statistics/popularity/${game_status}`),
+  getBestGames: (game_genre) => api.get(`/statistics/rating/${game_genre}`),
+  getLargestDevelopers: () => api.get(`/statistics/Devs`),
+  getLargestUsers: () => api.get(`/statistics/Users`),
+};
+
 export default api;
