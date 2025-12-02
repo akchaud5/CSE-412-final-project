@@ -20,7 +20,7 @@ function App() {
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await userAPI.getById(16);
+      const response = await userAPI.getById(8);
       
       //console.log("API Response Data:", response.data);
       setCurrentUser(response.data);
