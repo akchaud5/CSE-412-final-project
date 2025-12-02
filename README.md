@@ -103,7 +103,6 @@ npm start
 ```bash
 cd frontend
 npm install
-npm install recharts
 npm run dev
 # Frontend runs on http://localhost:3000
 ```
