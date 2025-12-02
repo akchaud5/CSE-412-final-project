@@ -20,7 +20,7 @@ VALUES
     (6, 'PrimeDagger', 'prime@example.com', 'primepass', FALSE),
     (7, 'okrueg', 'opkruege@asu.edu', '4321', TRUE),
     (8, 'akchaud5', 'akchaud5@asu.edu', 'password123', TRUE),
-    (9, 'GhostCaptain', 'ghost@example.com', 'ghostpass', FALSE),
+    (9, 'GhostCaptain', 'ghost@example.com', 'ghostpass', TRUE),
     (10, 'FrlNovaCmt10', 'frl@example.com', 'frlpass', FALSE),
     (11, 'GuardianNova', 'guardian@example.com', 'guardianpass', FALSE),
     (12, 'GhstSnpr101', 'ghst@example.com', 'ghstpass', FALSE),
